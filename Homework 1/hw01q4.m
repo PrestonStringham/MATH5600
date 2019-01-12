@@ -1,4 +1,4 @@
-% Preston Stringham and River Griffin
+% Preston Stringham and River Griffin 
 x=[]
 y=[]
 for i = 0:15
