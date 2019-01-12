@@ -1,3 +1,3 @@
-function m = myfunction(n)
-
-m = n + 1;
+function y = myfunction(x)
+y = 1+x.^2; 
+end
