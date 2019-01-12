@@ -1,4 +1,4 @@
-%Preston Stringham and River Griffin
+%Preston Stringham and River Griffin 
 function y = nonsense(x)
     if(mod(x,2)==1)
         y = 0;
