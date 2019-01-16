@@ -8,4 +8,4 @@ function y = nonsense(x)
 end
 % [4,11,15,20] put into printstuff outputs corresponding values
 % [17,122,226,401] with function as given in problem 3. Plugging into
-% nonsense, we get [0, 123, 127, 0], as expected.
+% nonsense, we get new corresponding values [0, 123, 127, 0], as expected.
