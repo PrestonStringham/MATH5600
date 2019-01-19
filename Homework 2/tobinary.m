@@ -3,18 +3,19 @@ function [vector] = tobinary(n)
     if (mod(n,1) ~= 0)
         error('Number is not a whole number.');
     else
-        dummy = zeros;
-        i = 1;
+        vector = zeros(1,1);
+        if n == 0
+            return;
+        end
         while n > 0
             pmax = floor(log2(n)); %get index of log2
-            dummy(i) = pmax %store the index
+            if isempty(vector)
+                vector = zeros(1, pmax+1);
+                vector(pmax+1)=1;
+            else
+                vector(pmax+1)=1;
+            end
             n = n - (2.^pmax); %update number by subtracting 2^pmax value
-            i = i + 1; %increment index for dummy vector
-        end
-        maxi = max(dummy) + 1;
-        vector = zeros(1, maxi);
-        for j = 1:length(dummy)
-            vector(dummy(j)+1) = 1;
         end
         vector = fliplr(vector);
     end
