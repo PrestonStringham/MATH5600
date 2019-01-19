@@ -9,7 +9,7 @@ function [vector] = tobinary(n)
         end
         while n > 0
             pmax = floor(log2(n)); %get index of log2
-            if isempty(vector)
+            if isempty(vector) %if vector is empty fill it with its max
                 vector = zeros(1, pmax+1);
                 vector(pmax+1)=1;
             else
