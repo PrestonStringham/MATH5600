@@ -4,9 +4,6 @@ function [vector] = tobinary(n)
         error('Number is not a whole number.');
     else
         vector = zeros(1,1);
-        if n == 0
-            return;
-        end
         while n > 0
             pmax = floor(log2(n)); %get index of log2
             vector(pmax+1)=1; %add 1 to the index of the vector
