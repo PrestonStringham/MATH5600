@@ -1,0 +1,18 @@
+%Preston Stringham & River Griffin
+for k=5:6
+    disp('Number of elements: '+k)
+    A=full(delsq(numgrid('B', k^2)));
+    b=zeros(length(A),1)+1;
+    startdecom=tic; %start timer for decomposition
+    [L,U] = MakeLU(A);
+    terminate=toc(startdecom);
+    disp('Decomposition Time: ' + terminate) %display time for decomposition
+    startsolve = tic;
+    y=ForwardSubstitution(L,b);
+    x=BackSubstitution(U,y);
+    terminate = toc(startsolve)
+    disp('Solve Time: ' + terminate) %display time for 
+    r = A*x-b;
+    norm(r)
+end
+
