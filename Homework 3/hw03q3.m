@@ -11,7 +11,7 @@ for k=5:7
     solve=toc(startsolve); %grab time to solve
     r = A*x-b;
     resid=norm(r); %display norm
-    formatspec='Number of elments: %d \nDecompose Time: %f \nSolve Time: %f \nNorm: %s \n\n';
+    formatspec='Number of elements: %d \nDecompose Time: %f \nSolve Time: %f \nNorm: %s \n\n';
     fprintf(formatspec, k.^2, decompose, solve, resid); %display info
 end
 
