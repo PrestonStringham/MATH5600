@@ -11,7 +11,7 @@ function [L,U,P]=MakePLU(A)
             dummyU = A(k,:); %Temp variable to store kth row for U
             dummyP = P(k,:); %Temp variable to store kth row for P
             A(k,:) = A(index,:); %Replace kth row in U with row that has greatest value
-            P(k,:) = P(index,:); %Replace kth row in P with row that has greates value in U
+            P(k,:) = P(index,:); %Replace kth row in P with row that has greatest value in U
             A(index,:) = dummyU; %Replace row that had greatest value with kth row
             P(index,:) = dummyP; %Replace row that had greatest value with kth row in P
             
