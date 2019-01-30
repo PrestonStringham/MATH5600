@@ -1,3 +1,4 @@
+%Preston Stringham and River Griffin
 function [L,U,P]=MakePLU(A)
     n = size(A,1);
     L=eye(n);
