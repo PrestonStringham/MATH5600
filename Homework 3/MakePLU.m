@@ -8,13 +8,14 @@ function [L,U,P]=MakePLU(A)
      
             col = A(:,k); %Get the kth column of A
             [pivot, index] = max(col); %Get the largest element in the column
-            dummyU = A(k,:); %Temp variable to store kth row for U
-            dummyP = P(k,:); %Temp variable to store kth row for P
-            A(k,:) = A(index,:); %Replace kth row in U with row that has greatest value
-            P(k,:) = P(index,:); %Replace kth row in P with row that has greatest value in U
-            A(index,:) = dummyU; %Replace row that had greatest value with kth row
-            P(index,:) = dummyP; %Replace row that had greatest value with kth row in P
-            
+            %dummyU = A(k,:); %Temp variable to store kth row for U
+            %dummyP = P(k,:); %Temp variable to store kth row for P
+            %A(k,:) = A(index,:); %Replace kth row in U with row that has greatest value
+            %P(k,:) = P(index,:); %Replace kth row in P with row that has greatest value in U
+            %A(index,:) = dummyU; %Replace row that had greatest value with kth row
+            %P(index,:) = dummyP; %Replace row that had greatest value with kth row in P
+            A([k index],:) = A([index k],:); %Replace kth row in U with row that has greatest value
+            P([k index],:) = P([index k],:); %Replace kth row in P with row that has greatest value in U
             %Finish LU Decomp
             m = A(i,k)/A(k,k); %multiplier for current row i
             L(i,k) = m;
