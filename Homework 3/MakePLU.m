@@ -8,21 +8,29 @@ function [L,U,P]=MakePLU(A)
         for i=k+1:n
             col = A(k:end,k); %Get elements below A(k,k), inclusive.
             [M, I] = max(abs(col)); %Get the largest element in the column
+            
             dummyU = A(k,:);
             dummyP = P(k,:);
+            
             A(k,:) = A(k+(I-1),:);
             P(k,:) = P(k+(I-1),:);
+            
             A(k+(I-1),:) = dummyU;
             P(k+(I-1),:) = dummyP;
+            
+            %Not sure how to tell when we need to switch elements in L
+            %NOTE: Not the whole row just elements in column k
+            if ~isdiag(L)
+               L([k:I+1 k]) = L([k k:I+1]);
+            end
             
             %Finish LU Decomp
             m = A(i,k)/A(k,k); %multiplier for current row i
             
             L(i,k) = m;
             
-            for j=k:n
-                A(i,j) = A(i,j) - m*A(k,j);
-            end
+            %NOTE: Got rid of for loop, simpiler
+            A(i,k:n) = A(i,k:n) - m*A(k,k:n);
         end
     end
     
