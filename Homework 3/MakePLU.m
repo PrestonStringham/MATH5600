@@ -21,7 +21,10 @@ function [L,U,P]=MakePLU(A)
             %Not sure how to tell when we need to switch elements in L
             %NOTE: Not the whole row just elements in column k
             if ~isdiag(L)
-               L([k:I+1 k]) = L([k k:I+1]);
+                if L([k+(I-1) k] >= L([k k+I]))
+                else
+                    L([k:I+1 k]) = L([k k:I+1]);
+                end
             end
             
             %Finish LU Decomp
