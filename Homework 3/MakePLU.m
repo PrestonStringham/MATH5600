@@ -18,8 +18,7 @@ function [L,U,P]=MakePLU(A)
             A(k+(I-1),:) = dummyU;
             P(k+(I-1),:) = dummyP;
             
-            %Not sure how to tell when we need to switch elements in L
-            %NOTE: Not the whole row just elements in column k
+            %Swap elements in L if necessary
             if ~isdiag(L)
                 if L([k+(I-1) k] >= L([k k+I]))
                 else
