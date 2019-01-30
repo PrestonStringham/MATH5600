@@ -30,8 +30,7 @@ function [L,U,P]=MakePLU(A)
             m = A(i,k)/A(k,k); %multiplier for current row i
             
             L(i,k) = m;
-            
-            %NOTE: Got rid of for loop, simpiler
+           
             A(i,k:n) = A(i,k:n) - m*A(k,k:n);
         end
     end
