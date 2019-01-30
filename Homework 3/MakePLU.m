@@ -7,7 +7,7 @@ function [L,U,P]=MakePLU(A)
     for k=1:n-1
         for i=k+1:n
             col = A(k:end,k); %Get elements below A(k,k), inclusive.
-            [M, I] = max(abs(col)); %Get the largest element in the column
+            [~, I] = max(abs(col)); %Get the largest element in the column
             
             dummyU = A(k,:);
             dummyP = P(k,:);
