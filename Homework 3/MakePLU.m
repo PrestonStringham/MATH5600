@@ -6,11 +6,15 @@ function [L,U,P]=MakePLU(A)
     
     for k=1:n-1
         for i=k+1:n
-            %col = A(:,k); %Get the kth column of A
-            [M, I] = max(A(:,k)); %Get the largest element in the column
-            [I_row, I_col] = ind2sub(size(A),I)
-            A([I_col I_row],:) = A([I_row I_col],:); %Replace kth row in U with row that has greatest value
-            P([I_col I_row],:) = P([I_row I_col],:); %Replace kth row in P with row that has greatest value in U
+            col = A(k:end,k); %Get elements below A(k,k), inclusive.
+            [M, I] = max(abs(col)); %Get the largest element in the column
+            dummyU = A(k,:);
+            dummyP = P(k,:);
+            A(k,:) = A(k+(I-1),:);
+            P(k,:) = P(k+(I-1),:);
+            A(k+(I-1),:) = dummyU;
+            P(k+(I-1),:) = dummyP;
+            
             %Finish LU Decomp
             m = A(i,k)/A(k,k); %multiplier for current row i
             
