@@ -5,8 +5,7 @@ function [L,U,P]=MakePLU(A)
     
     for k=1:n-1
         for i=k+1:n 
-            col = A(k:end,k); %Get elements below A(k,k), inclusive.
-            [~, I] = max(abs(col)); %Get the largest element in the column
+            [~, I] = max(abs(A(k:end,k))); %Get the largest element in the column
             
             I=I+k-1; %If max is 1 no switching in L will occur
 
@@ -22,7 +21,7 @@ function [L,U,P]=MakePLU(A)
             %Finish LU Decomp 
             L(i,k) = A(i,k)/A(k,k);
             
-            %perform guassian row reduction
+            %perform gaussian row reduction
             A(i,k:n) = A(i,k:n) - A(i,k)/A(k,k)*A(k,k:n);
         end
     end
