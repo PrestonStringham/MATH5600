@@ -11,7 +11,7 @@ function [L,U,P]=MakePLU(A)
             
             dummyU = A(k,:);
             dummyP = P(k,:);
-            dummyL = L(k,1:k-1)
+            dummyL = L(k,1:k-1);
             
             A(k,:) = A(k+(I-1),:);
             P(k,:) = P(k+(I-1),:);
