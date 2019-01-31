@@ -21,14 +21,6 @@ function [L,U,P]=MakePLU(A)
             P(k+(I-1),:) = dummyP;
             L(k+(I-1), 1:k-1) = dummyL;
             
-            %Swap elements in L if necessary
-            if ~isdiag(L)
-                if L([k+(I-1) k] >= L([k k+I]))
-                else
-                    L([k:I+1 k]) = L([k k:I+1]);
-                end
-            end
-            
             %Finish LU Decomp
             m = A(i,k)/A(k,k); %multiplier for current row i
             
@@ -41,5 +33,5 @@ function [L,U,P]=MakePLU(A)
     U = A;
    %A = [0 1 4; 2 4 6; 5 6 0];
    %B = [0 1 2 3; -3 0 0 1; 0 1 1/5 3; 2 5 1 7];
-   %C = [2 1 3; 4 -1 2; -1 4 1]
+   %C = [2 1 3; 4 -1 2; -1 4 1];
 end
