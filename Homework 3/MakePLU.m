@@ -1,32 +1,29 @@
 %Preston Stringham and River Griffin
 function [L,U,P]=MakePLU(A)
     n = size(A,1);
-    L=eye(n);
-    P=eye(n);
+    L=eye(n);P=L; %Set P = L = I_nxn
     
     for k=1:n-1
-        for i=k+1:n
+        for i=k+1:n 
             col = A(k:end,k); %Get elements below A(k,k), inclusive.
             [~, I] = max(abs(col)); %Get the largest element in the column
             
-            dummyU = A(k,:);
-            dummyP = P(k,:);
-            dummyL = L(k,1:k-1);
+            I=I+k-1; %If max is 1 no switching in L will occur
+
+            dummyL = L(k,1:k-1); %dummy variable to store k to k-1 elements in L
             
-            A(k,:) = A(k+(I-1),:);
-            P(k,:) = P(k+(I-1),:);
-            L(k, 1:k-1) = L(k+(I-1), 1:k-1);
+            %perform switching
+            A([k I],:) = A([I k],:);
+            P([k I],:) = P([I k],:);
+            L(k, 1:k-1) = L(I, 1:k-1);
             
-            A(k+(I-1),:) = dummyU;
-            P(k+(I-1),:) = dummyP;
-            L(k+(I-1), 1:k-1) = dummyL;
+            L(I, 1:k-1) = dummyL; %reinsert the dummy variable to new place
             
-            %Finish LU Decomp
-            m = A(i,k)/A(k,k); %multiplier for current row i
+            %Finish LU Decomp 
+            L(i,k) = A(i,k)/A(k,k);
             
-            L(i,k) = m;
-           
-            A(i,k:n) = A(i,k:n) - m*A(k,k:n);
+            %perform guassian row reduction
+            A(i,k:n) = A(i,k:n) - A(i,k)/A(k,k)*A(k,k:n);
         end
     end
     
