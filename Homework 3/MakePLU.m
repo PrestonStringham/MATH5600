@@ -7,7 +7,7 @@ function [L,U,P]=MakePLU(A)
         for i=k+1:n 
             [~, I] = max(abs(A(k:end,k))); %Get the largest element in the column
             
-            I=I+k-1; %If max is 1 no switching in L will occur
+            I=I+k-1;
 
             dummyL = L(k,1:k-1); %dummy variable to store k to k-1 elements in L
             
