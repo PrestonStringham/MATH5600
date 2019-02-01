@@ -1,3 +1,4 @@
+%Preston Stringham and River Griffin
 function x=ForwardSubstitution(A,b)
     n = length(b);
     x = zeros(n,1);
