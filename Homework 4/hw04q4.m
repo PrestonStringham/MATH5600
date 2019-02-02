@@ -10,7 +10,7 @@ x = U/y';
 
 norm(x - xref)
 
-%Solve with MakePLU
+%Solve with MakePLU. P^-1*M=P^-1*b
 [L1,U1,P1] = MakePLU(M);
 
 
