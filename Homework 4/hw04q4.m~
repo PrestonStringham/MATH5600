@@ -1,8 +1,8 @@
-M = [10^-14 1 0; 1 0 0; 0 1 1];
-b = [2; 1; 5];
+M = [10^-14 1 0; 1 0 0; 0 1 1]
+b = [2; 1; 5]
 
 %Solve using MATLAB 'backslash'
-x = M/b'
+x=M/b' %Not sure what x_ref is supposed to be. Which is the analytical solution?
 %norm(x-xref)
 
 %Solve with MakeLU
@@ -13,10 +13,10 @@ x = U/y'
 
 %Solve with MakePLU. P^-1*M=P^-1*b
 [L1,U1,P1] = MakePLU(M);
+
 b1 = P1*b;
-y = L1/b1';
-x = U1/y'
-%norm(x-xref)
+y = L/b1';
+x = U/y'
 
 
 
