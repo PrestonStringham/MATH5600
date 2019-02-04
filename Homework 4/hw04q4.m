@@ -17,7 +17,7 @@ x = U/y'
 error = norm(x-xref)
 
 %Solve with MakePLU. P*Mx=P*b
-%PMx = LU
+%PMx = Pb
 %LUx = Pb
 %Ly = Pb
 %Ux = y
