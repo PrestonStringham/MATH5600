@@ -16,7 +16,11 @@ y = L/b';
 x = U/y'
 error = norm(x-xref)
 
-%Solve with MakePLU. P^-1*M=P^-1*b
+%Solve with MakePLU. P*Mx=P*b
+%PMx = LU
+%LUx = Pb
+%Ly = Pb
+%Ux = y
 disp('Error for MakePLU computation:')
 [L,U,P] = MakePLU(M);
 b = P*b;
