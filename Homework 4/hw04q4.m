@@ -1,4 +1,4 @@
-%Preston Stringham & River Griffin
+%Preston Stringham and River Griffin
 M = [10^-14 1 0; 1 0 0; 0 1 1];
 b = [2; 1; 5];
 
