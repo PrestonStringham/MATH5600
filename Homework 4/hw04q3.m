@@ -1,3 +1,4 @@
+%Preston Stringham and River Griffin
 A = [3 4; -3 -6.001]
 b = [2; 3]
 x = A\b
