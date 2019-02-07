@@ -9,4 +9,4 @@ relb=norm(b-b1)/norm(b)
 condA=cond(A)
 relx <= condA*relb
 
-%Yes, this agrees with the Theorem in problem 2. 
+%Yes, this agrees with the Theorem in problem 2. See paper for details.
