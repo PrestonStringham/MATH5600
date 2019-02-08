@@ -1,5 +1,5 @@
 %Preston Stringham and River Griffin
-A = [3 4; -3 -6.001]
+A = [2 4; -3 -6.001]
 b = [2; 3]
 x = A\b
 b1=[2;3.01]
