@@ -1,5 +1,4 @@
 % Preston Stringham and River Griffin
-%test
 x=[]
 y=[]
 for i = 0:15
