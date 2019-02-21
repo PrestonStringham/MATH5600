@@ -1,5 +1,5 @@
 %Preston Stringham and River Griffin
-fprintf('--------------------------------- \n')
+fprintf('----------------------------------------- \n')
 fprintf('x_0 = 0 \n')
 format short
 h=2.^-(1:10);
@@ -9,10 +9,12 @@ fd = (f(x0+h)-f(x0)) ./ h;
 exact = cos(x0);
 error = abs(fd-exact);
 ratio = [0 error(1:end-1) ./ error(2:end)];
-[h' error' ratio']
-fprintf('--------------------------------- \n')
+hratio = [0 h(1:end-1)./h(2:end)];
+k = [log(ratio)./log(hratio)];
+[h' error' ratio' k']
+fprintf('----------------------------------------- \n')
 
-fprintf('--------------------------------- \n')
+fprintf('----------------------------------------- \n')
 fprintf('x_0 = 1 \n')
 format short
 h=2.^-(1:10);
@@ -21,6 +23,8 @@ f= @(x)sin(x);
 fd = (f(x0+h)-f(x0)) ./ h;
 exact = cos(x0);
 error = abs(fd-exact);
-ratio = [0 error(1:end-1) ./ error(2:end)];
-[h' error' ratio']
-fprintf('--------------------------------- \n')
+ratio = [0 error(1:end-1)./error(2:end)];
+hratio = [0 h(1:end-1)./h(2:end)];
+k = log(ratio) ./ log(hratio);
+[h' error' ratio' k']
+fprintf('----------------------------------------- \n')
