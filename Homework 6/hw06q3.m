@@ -1,7 +1,7 @@
 %Preston Stringham and River Griffin
 
 f = @(x) -(x.*cos(x));
-f_exact = @(x) x.*cos(x)-2.*sin(x);
+f_exact = @(x) x.*cos(x)-2.*sin(x)+((3/4)-(1/4)*sin(1)+(1/8)*cos(1)+(1/4)*sin(9)-(9/8)*cos(9)).*x-(7/4)-(1/4)*sin(9)+(9/8)*cos(9)+(9/4)*sin(1)-(9/8)*cos(1);
 
 a = 1;
 b = 9;
