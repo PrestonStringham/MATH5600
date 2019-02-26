@@ -23,8 +23,8 @@ function [x,u] = finite_difference_laplace(func, a, b, N, u_a, u_b)
     u = A\B;
     
     u=[u_a; u; u_b];
-    xx=linspace(a,b,1000);
-    yexact=xx.*func(xx);
-    plot(x,u,'x-', xx,yexact, 'k-')
+%     xx=linspace(a,b,1000);
+%     yexact=xx.*func(xx);
+%     plot(x,u,'x-', xx,yexact, 'k-')
     
 end
