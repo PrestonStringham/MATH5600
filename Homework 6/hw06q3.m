@@ -11,7 +11,7 @@ ua = -1;
 ub = 5;
 
 %N=6 Values
-N_max = 15;
+N_max = 8;
 j = 1;
 for(i = 2.^(0:N_max)*6)
     [x,u] = finite_difference_laplace(f, a, b, i, ua, ub);
