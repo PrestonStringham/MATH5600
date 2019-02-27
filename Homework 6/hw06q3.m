@@ -34,7 +34,7 @@ hold on
 
 %Set Plot Title, Legend, and LineWidth.
 title("BVP Approximations")
-legend("Exact Solution", "N=6", "N=12", "N=24", 'Location', 'northwest');
+legend("N=6", "N=12", "N=24", "Exact Solution", "Location", "northwest");
 set(findall(gca, 'Type', 'Line'),'LineWidth',1.5);
 
 fprintf('----------------------------------------- \n')
