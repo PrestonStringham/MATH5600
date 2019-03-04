@@ -13,8 +13,11 @@ tol = 1e-12;
 a=0;
 b=3;
 
-%Starting number for Newton's Method
+%Starting number for Newton's Method and First number for Secant Method
 x0=0;
+
+%Second number for Secant Method
+x1 = 0.1;
 
 %Bisection Method
 [root, data] = bisect(a, b, f, tol);
@@ -33,6 +36,6 @@ fprintf('-------------------------- \n');
 %Secant Method
 fprintf('-------------------------- \n');
 fprintf("Secant Method: \n");
-[root, its] = secant(f, 0, 0.1, tol)
+[root, its] = secant(f, x0, x1, tol)
 fprintf('-------------------------- \n');
 
