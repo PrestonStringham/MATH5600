@@ -1,3 +1,3 @@
 %Preston Stringham and River Griffin
-[root, its] = newton(@myNDfun, @myNDfunprime, [1;2;3], 1e-7)
+[root, its] = newton(@myNDfun, @myNDfunprime, [1;2;40], 1e-8)
 myNDfun(root)
