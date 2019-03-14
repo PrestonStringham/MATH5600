@@ -1,5 +1,9 @@
 %Preston Stringham and River Griffin
 
+%Interval
+a=0;
+b=3;
+
 %Function
 f=@(x) 2.*cos(x)-sin(x);
 
@@ -8,10 +12,6 @@ dfdx=@(x) -2.*sin(x)-cos(x);
 
 %Tolerance
 tol = 1e-12;
-
-%Interval
-a=0;
-b=3;
 
 %Starting number for Newton's Method and First number for Secant Method
 x0=0;
