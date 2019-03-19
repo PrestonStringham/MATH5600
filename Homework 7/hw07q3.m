@@ -1,4 +1,5 @@
 %Preston Stringham and River Griffin
+
 %i = 0
 %while(root ~= [0;0;0])
  %   try
