@@ -11,5 +11,6 @@
       %  continue
    % end
 %end
+
 [root, its] = newton(@myNDfun, @myNDfunprime, [0;1;0], 1e-8)
 myNDfun(root)
