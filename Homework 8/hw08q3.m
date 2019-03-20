@@ -1,21 +1,25 @@
-b = [0.3 0.3 0.3 0.1]
-d = [0.1 0.2 0.5 0.9]
+b = [0.3 0.3 0.3 0.1];
 
-M = diag(1-d)
+%Death rates for part a
+% d = [0.1 0.2 0.5 0.9];
 
-M([2:4],:) = M([2:4],:) + M([1:3],:)
-M(2,2) = 0
-M(3,3) = 0
+%Death rates for part c
+d = [0.1 0.2 0.5 0.1];
 
-M(1,:) = b
+M = diag(1-d);
+M([2:4],:) = M([2:4],:) + M([1:3],:);
+M(2,2) = 0;
+M(3,3) = 0;
+M(1,:) = b;
 
-P_init = [100 200 150 75]
+P = [100; 200; 150; 75]
 
-P = []
+time = 0;
+time_end = 1000;
 
-
-while(norm(P) ~= 0)
+while(time <= time_end)
     P = M*P
+    time = time + 1;
 end
 
 %Tolerance
