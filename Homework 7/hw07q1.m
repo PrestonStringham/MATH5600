@@ -6,10 +6,9 @@ f = @(x) sin(x) + 5*x.^2 - exp(x);
 %Tolerance
 tol = 1e-6;
 
-%First guess, take the entire interval we know the roots are on. We are
-%gauranteed to find a root.
+%First guess
 a = -5;
-b = 5;
+b = 0;
 root1 = bisect(a,b,f,tol)
 
 %From the first guess, change a and b to begin finding second root.
