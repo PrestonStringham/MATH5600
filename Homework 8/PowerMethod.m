@@ -13,11 +13,11 @@ while norm( A*x - rq*x)/norm(A*x) >tol
     y = A*x;
     x = y / norm(y);
     
-    %{
+    
     if itcount <= 15
         x
     end
-    %}
+    
     
     rq = x' * (A*x) / (x'*x);
 end

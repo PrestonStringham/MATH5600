@@ -1,3 +1,4 @@
+%Birth rates
 b = [0.3 0.3 0.3 0.1];
 
 %Survival rates for part a
@@ -14,7 +15,7 @@ M(3,3) = 0;
 M(1,:) = b;
 
 %Find largest eigenvalue by observing D from eig function
-%IF largest eigenvalue > 1 then population explodes
+%If largest eigenvalue > 1 then population explodes
 %If largest eigenvalue < 1 the population goes extinct
 [V, D] = eig(M);
 D
