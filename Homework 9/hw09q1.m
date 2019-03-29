@@ -46,6 +46,7 @@ cond_num = cond(A, inf)
 %Monomial interpolation
 monomial_at_1 = pn(1)
 
+%Spline interpolation
 spline_at_1 = ppval(PP, 1)
 
 m = (py(2)-py(1))/(px(2)-px(1));
@@ -53,10 +54,10 @@ y = @(x) m*x - 1;
 xx = linspace(0,2);
 yy = y(xx);
 
+%Linear interpolation
 linear_at_1 = y(1)
 
 plot(xx, yy, '-', px, py, 'x')
-
 legend("Monomial", "Spline", "Fake Piecewise Linear",...
     "Actual Piecewise Linear", "Points");
 
