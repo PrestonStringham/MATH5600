@@ -1,5 +1,6 @@
 %Preston Stringham and River Griffin
 clc; clear;
+
 %Part (a)
 px = [0 2 3 4 5 6 7];
 py = [-1 -2 -1 3 -1 -1 5];
@@ -37,12 +38,11 @@ hold on
 
 
 %Part (b)
-
 %Condition number
 cond_num = cond(A, inf)
 
-%Part (c)
 
+%Part (c)
 %Monomial interpolation
 monomial_at_1 = pn(1)
 
@@ -60,6 +60,7 @@ linear_at_1 = y(1)
 plot(xx, yy, '-', px, py, 'x')
 legend("Monomial", "Spline", "Fake Piecewise Linear",...
     "Actual Piecewise Linear", "Points");
+
 
 %Part (d)
 x0 = 1;
