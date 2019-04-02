@@ -27,5 +27,5 @@ q2 = integral(f2,x(1),x(2));
 errorMIDF1 = abs(q1 - MIDF1)
 errorMIDF2 = abs(q2 - MIDF2)
 
-errorTRF1 = abs(q2 - TRF1)
+errorTRF1 = abs(q1 - TRF1)
 errorTRF2 = abs(q2 - TRF2)
