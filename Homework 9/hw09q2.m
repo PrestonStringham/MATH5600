@@ -22,7 +22,7 @@ q1 = integral(f1,x(1),x(2));
 q2 = integral(f2,x(1),x(2));
 
 
-%error for each calculated value from midpoint to trapazoid
+%error for each calculated value of midpoint and trapazoid
 
 errorMIDF1 = abs(q1 - MIDF1)
 errorMIDF2 = abs(q2 - MIDF2)
