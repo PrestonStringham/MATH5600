@@ -34,5 +34,9 @@ fprintf('Exact: %.12f\nApproximate: %.12f\n',exact, approx);
 %Create information table
 valueTable = [n' h errs errate]
 
+%Analysis:
+%Yes, the composite Gauss quadrature rule converges with O(h^4). Based on
+%the error rate that is displayed in the table.
+
 
 %Part d).
