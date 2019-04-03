@@ -32,7 +32,7 @@ errate = [0;errs(1:end-1)]./errs;
 fprintf('Exact: %.12f\nApproximate: %.12f\n',exact, approx);
 
 %Create information table
-[n' h errs errate]
+valueTable = [n' h errs errate]
 
 
 %Part d).
