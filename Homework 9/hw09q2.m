@@ -28,3 +28,8 @@ errorTRF1 = abs(q1 - TRF1)
 errorMIDF2 = abs(q2 - MIDF2)
 errorTRF2 = abs(q2 - TRF2)
 
+%Yes, the theory is correct. Setting up the Midpoint and Trapazoid methods
+%for the two functions above, computing the actual value of the 
+%integral of the two functions, computing the errors
+%and comparing the errors - Midpoint Rule does indeed have half the
+%error of the Trapazoid Rule.
