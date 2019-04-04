@@ -36,18 +36,18 @@ valueTable = [n' h errs errate]
 
 fprintf('\n\n');
 
-%Conclusion:
+%---------------------------Conclusion---------------------------------
 %Yes, the composite Gauss quadrature rule converges with O(h^4). Based on
 %the error rate that is displayed in the table.
+%----------------------------------------------------------------------
 
 
 %Part d).
 
 %Composite Simpson
-for i=2:length(n)
-    
+
+for i=1:length(n)
+
 end
 
-
-
-%Composite Midpoint
+%Composite Simpson
