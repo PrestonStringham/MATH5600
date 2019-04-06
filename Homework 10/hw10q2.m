@@ -28,13 +28,16 @@ end
 
 errate = [0;errs(1:end-1)]./errs;
 
+fprintf('------------------------------------------\n');
+fprintf('Gauss Quadrature Error Analysis \n');
+
 %Display exact solution and approximated solution -> 12 decimal places
 fprintf('Exact: %.12f\nApproximate: %.12f\n',exact, approx);
 
 %Create information table
 valueTable = [n' h errs errate]
 
-fprintf('\n\n');
+fprintf('------------------------------------------\n');
 
 %---------------------------Conclusion---------------------------------
 %Yes, the composite Gauss quadrature rule converges with O(h^4). Based on
@@ -44,10 +47,46 @@ fprintf('\n\n');
 
 %Part d).
 
+%Reset variables for Composite Simpson
+errs=length(n);
+h=length(n);
+approx = 0;
+
 %Composite Simpson
-
 for i=1:length(n)
-
+    approx = compSimpson(f, a, b, n(i));
+    h(i,:) = (b-a)/n(i);
+    errs(i,:) = abs(exact - approx);
 end
 
-%Composite Simpson
+errate = [0;errs(1:end-1)]./errs;
+
+fprintf('------------------------------------------\n');
+fprintf('Composite Simpson Error Analysis \n');
+fprintf('Exact: %.12f\nApproximate: %.12f\n',exact, approx);
+
+valueTable = [n' h errs errate]
+
+fprintf('------------------------------------------\n');
+
+%Reset variables for Composite Midpoint
+errs=length(n);
+h=length(n);
+approx = 0;
+
+%Composite Midpoint
+for i=1:length(n)
+    approx = compMidpoint(f, a, b, n(i));
+    h(i,:) = (b-a)/n(i);
+    errs(i,:) = abs(exact - approx);
+end
+
+errate = [0;errs(1:end-1)]./errs;
+
+fprintf('------------------------------------------\n');
+fprintf('Composite Midpoint Error Analysis \n');
+fprintf('Exact: %.12f\nApproximate: %.12f\n',exact, approx);
+
+valueTable = [n' h errs errate]
+
+fprintf('------------------------------------------\n');
