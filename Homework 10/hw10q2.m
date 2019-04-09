@@ -90,3 +90,9 @@ fprintf('Exact: %.12f\nApproximate: %.12f\n',exact, approx);
 valueTable = [n' h errs errate]
 
 fprintf('------------------------------------------\n');
+
+%---------------------------Conclusion---------------------------------
+%Yes, the composite Simpson quadrature rule converges with O(h^4) 
+%based on the error rate that is displayed in the table. The composite
+%Midpoint rule converges with O(h), based on our results.
+%----------------------------------------------------------------------

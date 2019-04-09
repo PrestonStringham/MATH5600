@@ -1,3 +1,4 @@
+%Preston Stringham and River Griffin
 function value = compGauss(f,a,b,n)
     dist = (b-a)/n;
     x = (0:n)*dist + a;
